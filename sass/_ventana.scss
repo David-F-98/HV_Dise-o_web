@@ -1,0 +1,138 @@
+@use 'variables';
+
+$breakpoints:(
+	sm : 800px,
+);
+
+@mixin media-up($breakpoint){
+	@media screen and (max-width: map-get($breakpoints,$breakpoint)) {
+		@content;
+	}
+};
+
+.ventana {
+	display: none;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+
+	&--active {
+		display: block;
+	}
+
+	&__overlay {
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.8);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include media-up(sm){
+			height: 110%;
+		}
+	}
+
+	&__correo {
+		width: 90%;
+		max-width: 600px;
+		padding: 2.5rem;
+		background: #fff;
+		border-radius: 0.625rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.25rem;
+		text-align: center;
+		position: relative;
+		@include media-up(sm){
+			width: 75%;
+		}
+	}
+
+	&__btn-cerrar {
+		position: absolute;
+		right: -2.5rem;
+		top: -2.5rem;
+		cursor: pointer;
+		background: none;
+		border: none;
+		color: #fff;
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+
+	&__icono-cerrar {
+		width: 100%;
+		height: 100%;
+	}
+
+	&__titulo {
+		font-size: 1.5rem;
+	}
+
+	&__imagen-correo {
+		width: 18.75rem;
+	}
+
+	&__hint {
+		font-size: 1rem;
+		color: variables.$color-texto-secundario;
+	}
+
+	&__enlace {
+		width: 3.125rem;
+		height: 3.125rem;
+		border-radius: 3.125rem;
+		color: #fff;
+		padding: 0.3125rem;
+		background: #000;
+	}
+
+	&__link {
+		width: 2.5rem;
+    	height: 2.5rem;
+	}
+
+	&__body {
+		background: #fff;
+		padding: 0.3125rem;
+		width: 90%;
+		max-width: 60%;
+		border-radius: 0.625rem;
+		display: grid;
+		grid-template-columns: 3fr 4fr;
+		gap: 1.25rem;
+		position: relative;
+		@include media-up(sm){
+			max-width: 75%;
+			grid-template-columns: 3fr;
+			max-height: 70%;
+			overflow: scroll;
+		}
+	}
+
+	&__imagen {
+		width: 100%;
+		border-radius: 0.3125rem;
+		vertical-align: top;
+	}
+
+	&__fecha {
+		font-size: 0.875rem;
+		color: variables.$color-texto-secundario;
+	}
+
+	&__parrafo {
+		line-height: 1.5rem;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+		padding: 1.25rem 0;
+	}
+}
