@@ -121,7 +121,7 @@ const suelta = (e) =>{
     clickPresionado = false;
 };
 
-slider.addEventListener('mousedown', presiona);
+// slider.addEventListener('mousedown', presiona);
 slider.addEventListener('mousemove', mueve);
 slider.addEventListener('mouseup', suelta);
 
