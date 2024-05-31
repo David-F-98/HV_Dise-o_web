@@ -122,8 +122,8 @@ const suelta = (e) =>{
 };
 
 // slider.addEventListener('mousedown', presiona);
-slider.addEventListener('mousemove', mueve);
-slider.addEventListener('mouseup', suelta);
+// slider.addEventListener('mousemove', mueve);
+// slider.addEventListener('mouseup', suelta);
 
 const botonesEmail = document.querySelectorAll('[data-action="abrir-ventana-correo"]');
 const ventanaCorreo = document.getElementById('ventana-correo');
@@ -177,5 +177,5 @@ window.addEventListener('load', async()=>{
     await animarTexto(document.querySelector('.hero__titulo--dos'));
     
     document.querySelectorAll('.hero__burbuja')[0].classList.add('hero__burbuja--active-1');
-    document.querySelectorAll('.hero__burbuja')[1].classList.add('hero__burbuja--active-2');
+    // document.querySelectorAll('.hero__burbuja')[1].classList.add('hero__burbuja--active-2');
 });
